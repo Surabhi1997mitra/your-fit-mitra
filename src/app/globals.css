@@ -1,8 +1,33 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* LIGHT THEME */
+  --bg: #ffffff;
+  --bg-secondary: #f7f7f7;
+
+  /* card surface (off-white / soft grey) */
+  --bg-card: #fafafa;
+
+  --text-primary: #111111;
+  --text-secondary: #4b5563;
+  --accent: #dc2626;
+  --border: #e5e7eb;
+  --bg-mission: #f1f1f1;
+}
+
+/* DARK THEME */
+html[data-theme="dark"] {
+  --bg: #000000;
+  --bg-secondary: #1f1e1e;
+
+  /* card surface (soft charcoal, NOT pure black) */
+  --bg-card: #141414;
+
+  --text-primary: #ffffff;
+  --text-secondary: #9ca3af;
+  --accent: #dc2626;
+  --border: #1f2937;
+  --bg-mission: #111111;
 }
 
 @theme inline {
@@ -18,9 +43,71 @@
     --foreground: #ededed;
   }
 }
-
+/* 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+} */
+
+body {
+  background-color: var(--bg);
+  color: var(--text-primary);
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0px rgba(225, 6, 0, 0);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(225, 6, 0, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 0px rgba(225, 6, 0, 0);
+  }
+}
+
+.glow-pulse {
+  animation: pulseGlow 1.6s ease-out;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+/* 
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+} */
+
+body {
+  background-color: var(--bg);
+  color: var(--text-primary);
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0px rgba(225, 6, 0, 0);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(225, 6, 0, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 0px rgba(225, 6, 0, 0);
+  }
+}
+
+.glow-pulse {
+  animation: pulseGlow 1.6s ease-out;
 }
