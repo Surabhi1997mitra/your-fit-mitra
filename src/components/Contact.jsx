@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Contact() {
   return (
     <section className="py-20 bg-[var(--bg)]">
@@ -10,9 +12,10 @@ export default function Contact() {
           Get structured guidance, accountability, and sustainable results.
         </p>
 
-        <button className="bg-red-600 hover:bg-red-700 text-[var(--text-primary)] font-semibold px-8 py-4 rounded-lg transition">
+        <Link href="/contact#whatsapp"
+        className="bg-red-600 hover:bg-red-700 text-[var(--text-primary)] font-semibold px-8 py-4 rounded-lg transition">
           Sign Up for Coaching
-        </button>
+        </Link>
       </div>
     </section>
   );
