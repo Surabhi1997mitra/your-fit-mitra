@@ -77,8 +77,7 @@ export default function Navbar() {
         <button
           onClick={toggleTheme}
           aria-label="Toggle theme"
-          className="ml-4 relative group flex items-center justify-center w-10 h-10 rounded-full
-             hover:bg-[var(--bg-secondary)] transition-all duration-300"
+          className={"ml-4 relative group flex items-center justify-center w-10 h-10 rounded-full hover:bg-[var(--bg-secondary)] transition-all duration-300"}
         >
           <span
             className={`text-lg transition-all duration-500 ${
