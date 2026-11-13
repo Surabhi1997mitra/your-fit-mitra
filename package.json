@@ -2,6 +2,9 @@
   "name": "your-fit-mitra",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "24.x"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -11,15 +14,15 @@
   "dependencies": {
     "framer-motion": "^12.27.0",
     "lucide-react": "^0.562.0",
-    "next": "16.1.2",
-    "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "next": "16.4.6",
+    "react": "19.2.9",
+    "react-dom": "19.2.9"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9",
-    "eslint-config-next": "16.1.2",
+    "eslint-config-next": "16.4.6",
     "eslint-config-prettier": "^10.1.8",
     "tailwindcss": "^4"
   }

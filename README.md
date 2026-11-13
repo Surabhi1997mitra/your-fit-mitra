@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# your.fit.mitra
 
-## Getting Started
+Website for **Your Fit Mitra**: personal fitness coaching, nutrition plans and online training.
+Live site: https://your-fit-mitra.vercel.app
 
-First, run the development server:
+## Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- [Next.js](https://nextjs.org) 16 (App Router), React 19, JavaScript
+- Tailwind CSS v4, with CSS variables for the light/dark theme (`src/app/globals.css`)
+- framer-motion (mobile menu animation), lucide-react (icons)
+- Hosted on Vercel
+
+## Project structure
+
+```
+src/
+  app/            routes: / (page.js), /about, /coaching, /mission, /contact
+  components/     Navbar, Footer, PageTransition, and homepage sections
+  assets/         images imported by pages (optimised by next/image)
+public/           static files served as-is
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Local development
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Requires **Node.js 24** (see `.nvmrc`; run `nvm use` if you use nvm).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm install
+npm run dev        # http://localhost:3000
+npm run build      # production build
+npm run lint       # ESLint
+```
 
-## Learn More
+## Environment variables
 
-To learn more about Next.js, take a look at the following resources:
+The site doesn't need any environment variables yet. `.env.example` lists the variables
+upcoming features will use, by **name only**.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- For local work, copy `.env.example` to `.env.local` and fill in **test** values. `.env.local` is git-ignored.
+- Production values are set only in Vercel → Settings → Environment Variables.
+- Variables starting with `NEXT_PUBLIC_` reach the browser. Secrets must never use that prefix.
+- Never commit secrets or share them in chat, issues or pull requests.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Branch and release workflow
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `main` is production. Vercel deploys it automatically.
+- Each piece of work goes on its own branch (e.g. `phase-1/site-fixes`), and Vercel builds a Preview URL for it.
+- Changes reach `main` only through a reviewed pull request. Check the Preview on a phone before merging.
+- Rollback: Vercel → Deployments → Instant Rollback, then revert the PR.
+  The tag `baseline-2026-11-13` marks the production state before the upgrade work began.
